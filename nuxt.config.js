@@ -2,7 +2,7 @@ module.exports = {
     /*
     ** Headers of the page
     */
-    cache: true,
+    cache: false,
     head: {
         title: 'cat-girl',
         meta: [
@@ -25,13 +25,15 @@ module.exports = {
         linkExactActiveClass: 'router-link-exact-active'
     },
     css: [
-        './assets/styles/base.less'
+        './assets/styles/base.less',
+        './assets/styles/swiper-3.4.2.min.css'
         // './assets/styles/normalize.css'
     ],
     /*
     ** Build configuration
     */
     build: {
+        vendor: ['vue-awesome-swiper'],
         /*
         ** Run ESLint on save
         */
@@ -43,6 +45,30 @@ module.exports = {
                     loader: 'eslint-loader',
                     exclude: /(node_modules)/
                 })
+            }
+        }
+    },
+    plugins: [
+        {src: '~/plugins/swiper.js', ssr: false},
+    ],
+    modules: [
+        '@nuxtjs/axios'
+    ],
+    axios: {
+        timeout: 10000,
+        headers: {},
+        interceptors: {
+            request: {
+                use: [
+                    config => config,
+                    err => Promise.reject(err)
+                ]
+            },
+            response: {
+                use: [
+                    response => response,
+                    err => Promise.reject(err)
+                ]
             }
         }
     }
