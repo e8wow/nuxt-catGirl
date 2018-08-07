@@ -1,0 +1,138 @@
+@import url('../../assets/styles/base');
+
+@prefixCls: navigation;
+.@{prefixCls} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: @navigation-height-xs;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px #bbb;
+    background: #fff;
+    &-main {
+        display: flex;
+    }
+    &-logo {
+        width: 185px;
+        height: @navigation-height-xs;
+        background: #bbb;
+    }
+    &.fold {
+        .@{prefixCls}-navs {
+            display: none;
+        }
+    }
+    &-navs {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: flex;
+        flex-flow: column;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        width: 100%;
+        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 5px 5px #eee;
+        > li {
+            position: relative;
+            &:active {
+                background: #eee;
+            }
+            a {
+                display: flex;
+                align-items: center;
+                padding: 0 0 0 20px;
+                height: @navigation-height-xs;
+                width: 100%;
+                text-decoration: none;
+                color: #000;
+            }
+            a.router-link-exact-active {
+                background: #efefef;
+                color: @primary-color;
+            }
+        }
+    }
+    &-user {
+        font-size: 14px;
+        &-nickname {
+            color: @primary-color;
+            text-decoration: none;
+            cursor: pointer;
+            margin: 0 20px 0 0;
+            display: inline-block;
+        }
+    }
+    &-right {
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+    }
+}
+
+/* 小屏幕（平板，大于等于 768px） */
+
+@media (min-width: @screen-sm-min) {
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+
+@media (min-width: @screen-md-min) {
+    .@{prefixCls} {
+        height: @navigation-height-xs;
+        padding: 0 @container-gutter;
+        &-logo {
+            height: @navigation-height-xs;
+        }
+        &.fold {
+            .@{prefixCls}-navs {
+                display: flex;
+            }
+        }
+        &-main {
+        }
+        &-navs {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: 0 0 0 70px;
+            flex-flow: row;
+            width: auto;
+            > li {
+                margin: 0 20px 0;
+                a {
+                    padding: 0;
+                    height: @navigation-height-xs;
+                }
+                a.router-link-exact-active {
+                    background: transparent;
+                    color: @primary-color;
+                    &::before {
+                        position: absolute;
+                        left: 0;
+                        bottom: 5px;
+                        content: '';
+                        height: 3px;
+                        width: 100%;
+                        background: @primary-color;
+                    }
+                }
+            }
+        }
+        &-user {
+            display: flex;
+        }
+    }
+}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+
+@media (min-width: @screen-lg-min) {
+}
