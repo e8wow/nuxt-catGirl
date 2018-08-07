@@ -2059,10 +2059,6 @@ error-stack-parser@^2.0.0:
   dependencies:
     stackframe "^1.0.4"
 
-eruda@^1.5.0:
-  version "1.5.0"
-  resolved "http://registry.npm.taobao.org/eruda/download/eruda-1.5.0.tgz#f2c9639e685f834b064f2002ece5758506057011"
-
 es5-ext@^0.10.14, es5-ext@^0.10.35, es5-ext@^0.10.9, es5-ext@~0.10.14:
   version "0.10.45"
   resolved "http://registry.npm.taobao.org/es5-ext/download/es5-ext-0.10.45.tgz#0bfdf7b473da5919d5adf3bd25ceb754fccc3653"
