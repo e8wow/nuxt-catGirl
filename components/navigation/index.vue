@@ -51,7 +51,7 @@
                         关注我们的微信
                     </div>
                 </section>
-                <button @click="fold=!fold"
+                <button @click="toggle"
                         class="btn btn-default visible-xs visible-sm i-cat-girl i-cat-girl-menu"></button>
             </div>
         </nav>
@@ -105,6 +105,9 @@
             })
         },
         methods: {
+            toggle() {
+                this.fold = !this.fold
+            },
             logout() {
                 // TODO 退出登录
                 console.log('退出登录')
