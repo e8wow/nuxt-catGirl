@@ -14,13 +14,22 @@
             </div>
         </section>
         <section>
-
+            <photo-list>
+                <photo-list-item v-for="i in 8" :key="i"
+                                 photo="/sucai.png"></photo-list-item>
+            </photo-list>
         </section>
     </section>
 </template>
 
 <script>
+    import {PhotoList, PhotoListItem} from '../components/PhotoList/index.js'
+
     export default {
+        components: {
+            PhotoList,
+            PhotoListItem
+        },
         data() {
             return {
                 swiperOption: {}
@@ -41,10 +50,16 @@
     @prefixCls: pg-index;
     .@{prefixCls} {
         &-banner-wrap {
-            padding: 40px 30px;
+            padding: 20px 15px;
         }
         &-banner {
             background: #bbb;
+        }
+    }
+
+    @media (min-width: @screen-md-min) {
+        &-banner-wrap {
+            padding: 40px 30px;
         }
     }
 </style>

@@ -13,7 +13,7 @@ module.exports = {
         link: [
             {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
             {rel: 'stylesheet', href: 'https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css'},
-            {rel: 'stylesheet', href: '//at.alicdn.com/t/font_780221_wq448pxqagd.css'}
+            {rel: 'stylesheet', href: '//at.alicdn.com/t/font_780221_m5cpvrpue.css'}
         ]
     },
     /*
