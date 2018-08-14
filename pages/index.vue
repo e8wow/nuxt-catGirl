@@ -14,21 +14,42 @@
             </div>
         </section>
         <section>
-            <photo-list>
-                <photo-list-item v-for="item in fakerData"
-                                 :data="item"
-                                 type="contract"
-                                 :key="item.id"/>
-            </photo-list>
+            <container title="Cosplayer写真" hasOrder>
+                <router-link slot="more" to="/">查看更多</router-link>
+                <photo-list>
+                    <photo-list-item v-for="item in fakerData"
+                                     :data="item"
+                                     :key="item.id"/>
+                </photo-list>
+            </container>
+
+            <container style="margin-top: 20px" title="Cosplayer视频" hasOrder>
+                <router-link slot="more" to="/">查看更多</router-link>
+                <photo-list>
+                    <photo-list-item v-for="item in fakerData"
+                                     :data="item"
+                                     :key="item.id"/>
+                </photo-list>
+            </container>
+
+            <container style="margin-top: 20px" title="私人专属">
+                <photo-list>
+                    <photo-list-item v-for="item in fakerData"
+                                     :data="item"
+                                     type="contract"
+                                     :key="item.id"/>
+                </photo-list>
+            </container>
         </section>
     </section>
 </template>
 
 <script>
-    import {PhotoList, PhotoListItem} from '../components/PhotoList'
+    import {Container, PhotoList, PhotoListItem} from '../components/PhotoList'
 
     export default {
         components: {
+            Container,
             PhotoList,
             PhotoListItem
         },

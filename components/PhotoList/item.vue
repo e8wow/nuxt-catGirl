@@ -46,7 +46,7 @@
         &-container {
             flex: 0 0 50%;
             margin: 15px 0 0 0;
-            padding: 0 10px;
+            padding: 0 5px;
             list-style-type: none;
             overflow: hidden;
         }
