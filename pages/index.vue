@@ -41,14 +41,17 @@
                 </photo-list>
             </container>
         </section>
+        <copyright-notice></copyright-notice>
     </section>
 </template>
 
 <script>
+    import CopyrightNotice from '../components/CopyrightNotice'
     import {Container, PhotoList, PhotoListItem} from '../components/PhotoList'
 
     export default {
         components: {
+            CopyrightNotice,
             Container,
             PhotoList,
             PhotoListItem
