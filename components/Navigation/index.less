@@ -18,8 +18,13 @@
         display: flex;
     }
     &-logo {
+        padding: 5px;
         height: @navigation-height-xs;
-        img{
+        a {
+            display: block;
+            height: 100%;
+        }
+        img {
             height: 100%;
         }
     }
@@ -101,6 +106,7 @@
         }
         &-navs {
             position: relative;
+            margin: 0 0 0 50px;
             top: 0;
             left: 0;
             flex-flow: row;
@@ -108,6 +114,9 @@
             box-shadow: none;
             > li {
                 margin: 0 10px 0;
+                &:active {
+                    background: transparent;
+                }
                 a {
                     padding: 0;
                     height: @navigation-height-md;
