@@ -4,7 +4,7 @@
             <section :class="`${prefixCls}-main`">
                 <div :class="`${prefixCls}-logo`">
                     <nuxt-link to="/">
-                        <!-- TODO Logo -->
+                        <img src="../../assets/images/logo.png" alt="logo">
                     </nuxt-link>
                 </div>
                 <ul :class="`${prefixCls}-navs`">

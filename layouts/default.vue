@@ -21,7 +21,7 @@
     @import url('../assets/styles/base');
 
     .default-layout-body {
-        margin: 45px 0 0 0;
+        margin: @navigation-height-xs 0 0 0;
     }
 
     .notice {
@@ -34,6 +34,9 @@
     }
 
     @media (min-width: @screen-md-min) {
+        .default-layout-body {
+            margin: @navigation-height-md 0 0 0;
+        }
         .notice {
             background: #f5f4f5;
             color: #bbb;

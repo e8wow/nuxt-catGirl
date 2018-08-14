@@ -18,9 +18,10 @@
         display: flex;
     }
     &-logo {
-        width: 185px;
         height: @navigation-height-xs;
-        background: #bbb;
+        img{
+            height: 100%;
+        }
     }
     &.fold {
         .@{prefixCls}-navs {
@@ -86,10 +87,10 @@
 
 @media (min-width: @screen-md-min) {
     .@{prefixCls} {
-        height: @navigation-height-xs;
+        height: @navigation-height-md;
         padding: 0 @container-gutter;
         &-logo {
-            height: @navigation-height-xs;
+            height: @navigation-height-md;
         }
         &.fold {
             .@{prefixCls}-navs {
@@ -102,15 +103,14 @@
             position: relative;
             top: 0;
             left: 0;
-            margin: 0 0 0 70px;
             flex-flow: row;
             width: auto;
             box-shadow: none;
             > li {
-                margin: 0 20px 0;
+                margin: 0 10px 0;
                 a {
                     padding: 0;
-                    height: @navigation-height-xs;
+                    height: @navigation-height-md;
                 }
                 a.router-link-exact-active {
                     background: transparent;
