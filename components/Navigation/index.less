@@ -68,6 +68,31 @@
     }
     &-user {
         font-size: 14px;
+        ul {
+            display: flex;
+            margin: 0 20px 0 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+                position: relative;
+                a {
+                    display: block;
+                    margin: 0 10px;
+                    color: @primary-color;
+                }
+                & + li {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 100%;
+                        width: 1px;
+                        background: #ddd;
+                    }
+                }
+            }
+        }
         &-nickname {
             color: @primary-color;
             text-decoration: none;

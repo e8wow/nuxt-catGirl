@@ -3,3 +3,15 @@
     overflow: hidden;
     white-space: nowrap;
 }
+
+a {
+    color: #000;
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+    }
+    &:hover, &:focus {
+        text-decoration: none;
+        color: rgba(0, 0, 0, .6);
+    }
+}

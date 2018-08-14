@@ -38,13 +38,28 @@
             <div :class="`${prefixCls}-right`">
                 <section :class="`${prefixCls}-user`">
                     <template v-if="userProfile">
-                        <div>
-                            <a :class="`${prefixCls}-user-nickname`">{{userProfile.name}}</a>
-                        </div>
+                        <ul class="hidden-xs hidden-sm">
+                            <li>
+                                <nuxt-link to="/">{{userProfile.name}}</nuxt-link>
+                            </li>
+                            <li>
+                                <nuxt-link to="/">1101天</nuxt-link>
+                            </li>
+                            <li>
+                                <nuxt-link to="/">1000金币</nuxt-link>
+                            </li>
+                        </ul>
+                        <section class="hidden-xs hidden-sm" style="margin: 0 20px 0 0;">
+                            <a>退出登录 </a>
+                            <span> | </span>
+                            <a> 我的账户</a>
+                        </section>
                     </template>
                     <template v-else>
                         <div class="visible-md visible-lg">
-                            <nuxt-link to="/login">登录</nuxt-link>
+                            <nuxt-link to="/login">会员登录</nuxt-link>
+                            <span style="margin: 0 10px;color: #ddd;">|</span>
+                            <nuxt-link style="margin-right: 70px;" to="/register">注册</nuxt-link>
                         </div>
                     </template>
                     <div class="visible-md visible-lg">
