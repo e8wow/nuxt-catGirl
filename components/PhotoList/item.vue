@@ -69,10 +69,10 @@
                 }
             }
             &-contract {
+                flex: 0 0 100%;
                 color: @primary-color;
                 height: 20px;
                 line-height: 20px;
-                text-align: right;
             }
         }
     }
@@ -85,11 +85,17 @@
             &-footer {
                 align-items: center;
                 &-info {
+                    flex: 1;
+                    flex-flow: row nowrap;
                     justify-content: center;
+                }
+                var {
+                    flex: 0 0 auto;
                 }
 
                 &-contract {
-                    text-align: right;
+                    flex: 0 1 auto;
+                    text-align: left;
                 }
             }
             &-footer.contract {
@@ -99,6 +105,7 @@
                 flex-flow: row nowrap;
                 .@{prefixCls}-footer-info {
                     justify-content: flex-start;
+                    flex: 0 0 auto;
                 }
             }
         }
