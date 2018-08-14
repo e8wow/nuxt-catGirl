@@ -7,30 +7,23 @@
 </template>
 
 <script>
-    export default {
-        name: 'photo-list',
-        props: {
-            prefixCls: {
-                type: String,
-                default: 'photo-list'
-            }
+export default {
+    name: 'photo-list',
+    props: {
+        prefixCls: {
+            type: String,
+            default: 'photo-list'
         }
     }
+}
 </script>
 
 <style lang="less">
-    @prefixCls: photo-list;
-    .@{prefixCls} {
-        padding: 0 5px;
-        margin: 0;
-        &::before {
-            display: table;
-            content: ' ';
-        }
-        &::after {
-            display: table;
-            content: ' ';
-            clear: both;
-        }
-    }
+@prefixCls: photo-list;
+.@{prefixCls} {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px;
+    margin: 0;
+}
 </style>

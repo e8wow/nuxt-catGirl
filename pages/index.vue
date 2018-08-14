@@ -15,15 +15,17 @@
         </section>
         <section>
             <photo-list>
-                <photo-list-item v-for="i in 8" :key="i"
-                                 photo="/sucai.png"></photo-list-item>
+                <photo-list-item v-for="item in fakerData"
+                                 :data="item"
+                                 type="contract"
+                                 :key="item.id"/>
             </photo-list>
         </section>
     </section>
 </template>
 
 <script>
-    import {PhotoList, PhotoListItem} from '../components/PhotoList/index.js'
+    import {PhotoList, PhotoListItem} from '../components/PhotoList'
 
     export default {
         components: {
@@ -32,7 +34,40 @@
         },
         data() {
             return {
-                swiperOption: {}
+                swiperOption: {},
+                fakerData: [{
+                    id: 1,
+                    photo: '/sucai.png',
+                    contract: 'Jelf'
+                }, {
+                    id: 2,
+                    photo: '/sucai.png',
+                    contract: 'Jelf1'
+                }, {
+                    id: 3,
+                    photo: '/sucai.png',
+                    contract: 'Jel2'
+                }, {
+                    id: 4,
+                    photo: '/sucai.png',
+                    contract: '唐伯虎点秋香'
+                }, {
+                    id: 5,
+                    photo: '/sucai.png',
+                    contract: '唐伯虎点秋香'
+                }, {
+                    id: 6,
+                    photo: '/sucai.png',
+                    contract: 'zoe'
+                }, {
+                    id: 7,
+                    photo: '/sucai.png',
+                    contract: '唐伯虎点秋香'
+                }, {
+                    id: 8,
+                    photo: '/sucai.png',
+                    contract: '唐伯虎点秋香'
+                }]
             }
         },
         props: {
