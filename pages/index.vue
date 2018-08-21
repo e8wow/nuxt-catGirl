@@ -19,7 +19,9 @@
                 <photo-list>
                     <photo-list-item v-for="item in fakerData"
                                      :data="item"
-                                     :key="item.id"/>
+                                     :key="item.id">
+                        <footer-default slot="footer"/>
+                    </photo-list-item>
                 </photo-list>
             </container>
 
@@ -28,7 +30,9 @@
                 <photo-list>
                     <photo-list-item v-for="item in fakerData"
                                      :data="item"
-                                     :key="item.id"/>
+                                     :key="item.id">
+                        <footer-default slot="footer"/>
+                    </photo-list-item>
                 </photo-list>
             </container>
 
@@ -36,8 +40,9 @@
                 <photo-list>
                     <photo-list-item v-for="item in fakerData"
                                      :data="item"
-                                     type="contract"
-                                     :key="item.id"/>
+                                     :key="item.id">
+                        <footer-contract slot="footer" :data="item"/>
+                    </photo-list-item>
                 </photo-list>
             </container>
         </section>
@@ -47,19 +52,23 @@
 
 <script>
     import CopyrightNotice from '../components/CopyrightNotice'
-    import {Container, PhotoList, PhotoListItem} from '../components/PhotoList'
+    import {
+        Container,
+        PhotoList, PhotoListItem,
+        FooterContract, FooterDefault
+    }                      from '../components/PhotoList'
 
     export default {
         components: {
             CopyrightNotice,
             Container,
-            PhotoList,
-            PhotoListItem
+            PhotoList, PhotoListItem,
+            FooterContract, FooterDefault
         },
         data() {
             return {
                 swiperOption: {},
-                fakerData: [{
+                fakerData: [ {
                     id: 1,
                     photo: '/sucai.png',
                     contract: 'Jelf'
@@ -91,7 +100,7 @@
                     id: 8,
                     photo: '/sucai.png',
                     contract: '唐伯虎点秋香'
-                }]
+                } ]
             }
         },
         props: {
