@@ -41,6 +41,7 @@
                     <photo-list-item v-for="item in fakerData"
                                      :data="item"
                                      :key="item.id">
+                        <i slot="body" class="i-cat-girl i-cat-girl-huangguan"></i>
                         <footer-contract slot="footer" :data="item"/>
                     </photo-list-item>
                 </photo-list>
@@ -123,12 +124,20 @@
         &-banner {
             background: #bbb;
         }
+        .i-cat-girl-huangguan {
+            position: absolute;
+            bottom: -10px;
+            right: 5px;
+            color: @primary-color;
+            font-size: 40px;
+        }
     }
 
     @media (min-width: @screen-md-min) {
         &-banner-wrap {
             padding: 40px 30px;
         }
+
     }
 </style>
 

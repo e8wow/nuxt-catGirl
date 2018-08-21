@@ -1,23 +1,11 @@
 <template>
     <li :class="`${prefixCls}-container`">
-        <div>
+        <div :class="`${prefixCls}-body`">
             <img style="width: 100%" :src="data.photo">
+            <slot name="body"></slot>
         </div>
         <div :class="[`${prefixCls}-footer`, type]">
             <slot name="footer"></slot>
-            <!--<div :class="`${prefixCls}-footer-info`">-->
-            <!--<var>-->
-            <!--<i class="i-cat-girl i-cat-girl-clock"></i>-->
-            <!--<span>2018-11-14</span>-->
-            <!--</var>-->
-            <!--<var>-->
-            <!--<i class="i-cat-girl i-cat-girl-love"></i>-->
-            <!--<span>666</span>-->
-            <!--</var>-->
-            <!--</div>-->
-            <!--<div v-if="type === 'contract'" class="oh1" :class="`${prefixCls}-footer-contract`">-->
-            <!--<span>已出售：</span>{{data.contract}}-->
-            <!--</div>-->
         </div>
     </li>
 </template>
@@ -50,6 +38,9 @@
             padding: 0 5px;
             list-style-type: none;
             overflow: hidden;
+        }
+        &-body {
+            position: relative;
         }
     }
 
