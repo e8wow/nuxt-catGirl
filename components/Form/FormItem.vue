@@ -1,7 +1,7 @@
 <template>
     <div :class="prefixCls">
         <slot></slot>
-        <p :class="errorClasses"> {{errorMsg}}</p>
+        <p :class="errorClasses"> {{message}}</p>
     </div>
 </template>
 
@@ -13,14 +13,16 @@
                 type: String,
                 default: 'cat-form-item'
             },
-            errorMsg: String
+            message: String,
+            messageType: String
         },
         computed: {
             errorClasses() {
                 return [
-                    `${this.prefixCls}-error`,
-                    'i-cat-girl i-cat-girl-error',
-                    { 'visibility-hidden': !this.errorMsg }
+                    `${this.prefixCls}-msg`,
+                    this.messageType,
+                    `i-cat-girl i-cat-girl-${this.messageType}`,
+                    { 'visibility-hidden': !this.message }
                 ]
             }
         }
@@ -32,12 +34,18 @@
 
     @prefixCls: cat-form-item;
     .@{prefixCls} {
-        &-error {
+        &-msg {
             margin: 0;
             color: #910782;
             height: 32px;
             line-height: 32px;
             text-align: center;
+        }
+        .error {
+            color: #910782;
+        }
+        .success {
+            color: #1eaa39;
         }
     }
 </style>
