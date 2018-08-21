@@ -3,21 +3,33 @@
         <div :class="`${prefixCls}-container`">
             <Form :class="prefixCls">
                 <FormItem :message="username.message"
-                          messageType="error">
+                          :messageType="username.messageType">
                     <Input v-model="username.value"
+                           @blur.native="checkUsername"
                            full
                            placeholder="账号"/>
                 </FormItem>
                 <FormItem :message="password.message"
                           messageType="error">
                     <Input v-model="password.value"
+                           @blur.native="checkPassword"
+                           type="password"
+                           full
+                           placeholder="输入密码"/>
+                </FormItem>
+                <FormItem :message="confirmPassword.message"
+                          messageType="error">
+                    <Input v-model="confirmPassword.value"
+                           @blur.native="checkConfirmPassword"
                            type="password"
                            full
                            placeholder="确认密码"/>
                 </FormItem>
-                <Button @click="submit" class="cat-button" full>登录</Button>
-                <p style="margin-top: 20px;text-align: center">
-                    <nuxt-link to="register">注册</nuxt-link>
+                <FormItem>
+                    <Button @click="submit" class="cat-button" full>注册</Button>
+                </FormItem>
+                <p style="text-align: center">
+                    <span>已有账号，请<nuxt-link class="primary-link" to="login"><b>登录</b></nuxt-link></span>
                 </p>
             </Form>
         </div>
@@ -50,32 +62,55 @@
             return {
                 username: {
                     message: '',
+                    messageType: '',
                     value: ''
                 },
                 password: {
+                    message: '',
+                    value: ''
+                },
+                confirmPassword: {
                     message: '',
                     value: ''
                 }
             }
         },
         methods: {
-            submit() {
+            async submit() {
+                if (await this.checkUsername() && this.checkPassword() && this.checkConfirmPassword()) {
+                    this.register()
+                }
+            },
+            async register() {
+                // TODO 登录请求
+                console.log('register')
+            },
+            async checkUsername() {
                 if (!this.username.value) {
                     this.username.message = '请输入账号'
-                    return
+                    this.username.messageType = 'error'
+                    return false
                 }
-                this.username.message = ''
-
-                if (!this.password.value) {
-                    this.password.message = '请输入密码'
-                    return
+                // TODO ajax check账号是否可用
+                this.username.message = '账号可以使用'
+                this.username.messageType = 'success'
+                return true
+            },
+            checkPassword() {
+                if (!/^[a-z0-9]{6,16}$/i.test(this.password.value)) {
+                    this.password.message = '请输入6~16位数字、字母密码'
+                    return false
                 }
                 this.password.message = ''
-
-                this.login()
+                return true
             },
-            async login() {
-                // TODO 登录请求
+            checkConfirmPassword() {
+                if (this.confirmPassword.value !== this.password.value) {
+                    this.confirmPassword.message = '两次输入密码不一致'
+                    return
+                }
+                this.confirmPassword.message = ''
+                return true
             }
         }
     }
