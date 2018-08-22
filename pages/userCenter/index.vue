@@ -16,7 +16,7 @@
             </li>
             <li>
                 <span>会员资料</span>
-                <nuxt-link to="/">修改 >></nuxt-link>
+                <nuxt-link to="/userCenter/profile">修改 >></nuxt-link>
             </li>
         </ul>
     </div>

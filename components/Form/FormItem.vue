@@ -1,7 +1,10 @@
 <template>
     <div :class="prefixCls">
         <slot></slot>
-        <p :class="errorClasses"> {{message}}</p>
+        <div :class="`${this.prefixCls}-message`">
+            <slot name="message"></slot>
+            <p v-if="!$slots.message" :class="errorClasses"> {{message}}</p>
+        </div>
     </div>
 </template>
 
@@ -19,7 +22,6 @@
         computed: {
             errorClasses() {
                 return [
-                    `${this.prefixCls}-msg`,
                     this.messageType,
                     `i-cat-girl i-cat-girl-${this.messageType}`,
                     { 'visibility-hidden': !this.message }
@@ -34,18 +36,30 @@
 
     @prefixCls: cat-form-item;
     .@{prefixCls} {
-        &-msg {
+        p {
             margin: 0;
-            color: #910782;
-            height: 32px;
-            line-height: 32px;
-            text-align: center;
+        }
+        &-message {
+            margin: 0;
+            height: 26px;
+            line-height: 26px;
         }
         .error {
             color: #910782;
+            text-align: center;
         }
         .success {
             color: #1eaa39;
+            text-align: center;
+        }
+    }
+
+    @media (min-width: @screen-md-min) {
+        .@{prefixCls} {
+            &-message {
+                height: 32px;
+                line-height: 32px;
+            }
         }
     }
 </style>
