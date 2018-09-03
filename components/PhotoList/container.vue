@@ -4,8 +4,8 @@
             <h2>{{title}}</h2>
             <div :class="`${prefixCls}-header-container`">
                 <div v-if="hasOrder" :class="`${prefixCls}-order`">
-                <span class="hidden-md hidden-lg" @click="order.isShow = !order.isShow">排序 <span
-                    class="i-cat-girl i-cat-girl-order"></span></span>
+                    <span class="hidden-md hidden-lg" @click="order.isShow = !order.isShow">排序 <span
+                        class="i-cat-girl i-cat-girl-order"></span></span>
                     <ul :class="{'hidden-xs': !order.isShow, 'hidden-sm': !order.isShow}">
                         <li v-for="item in order.data"
                             :key="item.field"
@@ -91,7 +91,7 @@
         background: #f2f2f2;
         padding: 15px;
         a {
-            color: #000000;
+            color: #000;
             text-decoration: none;
             &:hover {
                 cursor: pointer;
@@ -113,6 +113,7 @@
         }
         &-order {
             position: relative;
+            z-index: 100;
             ul {
                 position: absolute;
                 top: 100%;
