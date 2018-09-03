@@ -20,7 +20,7 @@
         props: {
             prefixCls: {
                 type: String,
-                default: 'exclusive'
+                default: 'pg-exclusive'
             }
         },
         data() {
@@ -66,8 +66,9 @@
 <style lang="less">
     @import "../assets/styles/base";
 
-    @prefixCls: exclusive;
+    @prefixCls: pg-exclusive;
     .@{prefixCls} {
+        padding: 40px 20px;
         .i-cat-girl-huangguan {
             position: absolute;
             bottom: -10px;
