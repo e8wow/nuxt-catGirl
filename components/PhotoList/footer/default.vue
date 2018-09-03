@@ -15,7 +15,7 @@
 
 <script>
     export default {
-        name: 'contract',
+        name: 'footer-default',
         props: {
             data: Object,
             prefixCls: {
