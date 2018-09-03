@@ -4,6 +4,7 @@ import PhotoListItem from './item.vue'
 
 import FooterContract from './footer/contract'
 import FooterDefault  from './footer/default'
+import BuyRecord  from './footer/buy-record'
 
 export {
     Container,
@@ -11,5 +12,6 @@ export {
     PhotoListItem,
 
     FooterContract,
-    FooterDefault
+    FooterDefault,
+    BuyRecord
 }
