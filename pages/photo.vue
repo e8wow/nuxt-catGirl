@@ -1,6 +1,6 @@
 <template>
     <div :class="prefixCls">
-        <order style="display: flex;justify-content: flex-end" :order="order"/>
+        <order :order="order"/>
         <photo-list>
             <photo-list-item v-for="item in fakerData"
                              :data="item"
@@ -88,11 +88,18 @@
     @prefixCls: pg-photo;
     .@{prefixCls} {
         padding: 20px;
-
+        .order {
+            display: flex;
+            justify-content: flex-end;
+        }
     }
 
     @media (min-width: @screen-md-min) {
         .@{prefixCls} {
+            .order {
+                display: flex;
+                justify-content: flex-start;
+            }
         }
     }
 </style>
