@@ -8,16 +8,18 @@
                 <footer-default slot="footer"/>
             </photo-list-item>
         </photo-list>
+        <copyright-notice/>
     </div>
 </template>
 
 <script>
     import { FooterDefault, PhotoList, PhotoListItem } from '../components/PhotoList'
     import Order                                       from '../components/Order'
+    import CopyrightNotice                             from '../components/CopyrightNotice'
 
     export default {
         name: 'photo',
-        components: { Order, PhotoListItem, PhotoList, FooterDefault },
+        components: { CopyrightNotice, Order, PhotoListItem, PhotoList, FooterDefault },
         props: {
             prefixCls: {
                 type: String,

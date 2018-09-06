@@ -33,7 +33,9 @@
                 </p>
             </Form>
         </div>
-        <copyright-notice/>
+        <div style="padding: 0 15px;">
+            <copyright-notice/>
+        </div>
     </div>
 </template>
 

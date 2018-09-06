@@ -13,7 +13,7 @@
 
 <style lang="less">
     .copyright-notice {
-        margin: 20px 15px 0;
+        margin: 20px 0;
         padding: 10px;
         background: #f2f2f2;
         line-height: 2;
