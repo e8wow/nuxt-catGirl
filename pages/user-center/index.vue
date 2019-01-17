@@ -12,7 +12,7 @@
             </li>
             <li>
                 <span>购买记录</span>
-                <nuxt-link to="/">进入查看 >></nuxt-link>
+                <nuxt-link to="/user-center/buy-record">进入查看 >></nuxt-link>
             </li>
             <li>
                 <span>会员资料</span>

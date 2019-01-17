@@ -119,6 +119,7 @@
     .@{prefixCls} {
         height: @navigation-height-md;
         padding: 0 @container-gutter;
+        white-space: nowrap;
         &-logo {
             height: @navigation-height-md;
         }
@@ -138,7 +139,8 @@
             width: auto;
             box-shadow: none;
             > li {
-                margin: 0 10px 0;
+                flex: 1;
+                padding: 0 10px 0;
                 &:active {
                     background: transparent;
                 }

@@ -40,7 +40,7 @@
                     <template v-if="userProfile">
                         <ul class="hidden-xs hidden-sm">
                             <li>
-                                <nuxt-link to="/">{{userProfile.name}}</nuxt-link>
+                                <nuxt-link to="/user-center">{{userProfile.name}}</nuxt-link>
                             </li>
                             <li>
                                 <nuxt-link to="/">1101天</nuxt-link>
@@ -52,7 +52,7 @@
                         <section class="hidden-xs hidden-sm" style="margin: 0 20px 0 0;">
                             <a>退出登录 </a>
                             <span> | </span>
-                            <a> 我的账户</a>
+                            <nuxt-link to="/user-center"> 我的账户</nuxt-link>
                         </section>
                     </template>
                     <template v-else>
